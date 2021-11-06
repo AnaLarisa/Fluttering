@@ -3,23 +3,29 @@ import 'package:flutter/material.dart';
 void _incrementCounter() {}
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
+  runApp(const MaterialApp(
+    home: Home(),
+  ));
+}
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: const Text('aseara am plecat in parc'),
         centerTitle: true,
         backgroundColor: Colors.indigoAccent,
       ),
-      body: const Center(
-        child: Text(
-          'si l-am vazut pe Dorian Popa',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.black45,
-            fontFamily: 'IndieFlower',
-          ),
+      body: Center(
+        child: IconButton(
+          onPressed: () {
+            print('you clicked me');
+          },
+          icon: Icon(Icons.access_alarms),
+          color: Colors.amberAccent,
         ),
       ),
       floatingActionButton: const FloatingActionButton(
@@ -27,6 +33,6 @@ void main() {
         onPressed: _incrementCounter,
         backgroundColor: Colors.lightGreenAccent,
       ),
-    ),
-  ));
+    );
+  }
 }
